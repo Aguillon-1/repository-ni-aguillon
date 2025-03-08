@@ -6,6 +6,8 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private MonthCalendar monthCalendar1;
+
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,6 +30,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            this.monthCalendar1 = new MonthCalendar();
+            this.SuspendLayout();
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(18, 18);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.monthCalendar1);
+            this.Name = "MainForm";
+            this.Text = "Main Form";
+            this.ResumeLayout(false);
+
+
+
+
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             label3 = new Label();

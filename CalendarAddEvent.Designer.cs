@@ -1,17 +1,13 @@
-﻿
-namespace Classroom_Management_System
+﻿namespace Classroom_Management_System
 {
     partial class CalendarAddEvent
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private Label lblSelectedDate;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Button button1;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,115 +17,63 @@ namespace Classroom_Management_System
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            SuspendLayout();
+            this.lblSelectedDate = new Label();
+            this.textBox1 = new TextBox();
+            this.textBox2 = new TextBox();
+            this.button1 = new Button();
+            this.SuspendLayout();
             // 
-            // label1
+            // lblSelectedDate
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(71, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(34, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Date:";
-            label1.Click += label1_Click;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(300, 212);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.lblSelectedDate.AutoSize = true;
+            this.lblSelectedDate.Location = new System.Drawing.Point(12, 9);
+            this.lblSelectedDate.Name = "lblSelectedDate";
+            this.lblSelectedDate.Size = new System.Drawing.Size(89, 13);
+            this.lblSelectedDate.TabIndex = 0;
+            this.lblSelectedDate.Text = "Selected Date: ";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(71, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(304, 23);
-            textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
+            this.textBox1.Location = new System.Drawing.Point(107, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.ReadOnly = true;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(71, 129);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(304, 23);
-            textBox2.TabIndex = 4;
-            textBox2.TextChanged += textBox2_TextChanged;
+            this.textBox2.Location = new System.Drawing.Point(15, 35);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(257, 100);
+            this.textBox2.TabIndex = 2;
             // 
-            // label2
+            // button1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(71, 111);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Event:";
-            label2.Click += label2_Click;
+            this.button1.Location = new System.Drawing.Point(197, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CalendarAddEvent
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(455, 306);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Name = "CalendarAddEvent";
-            Text = "Add Event";
-            Load += CalendarAddEventload;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 176);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblSelectedDate);
+            this.Name = "CalendarAddEvent";
+            this.Text = "Add Event";
+            this.Load += new System.EventHandler(this.CalendarAddEvent_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
-
-        private void CalendarAddEventload(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        private Label label1;
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label2;
     }
 }

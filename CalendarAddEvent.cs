@@ -7,27 +7,22 @@ namespace Classroom_Management_System
     public partial class CalendarAddEvent : Form
     {
         private const string ConnectionString = "Server=tcp:classroom-management-system-server.database.windows.net,1433;Initial Catalog=Classroom-Management-System;Persist Security Info=False;User ID=CMSbscs2badmin;Password=CSMbscs2b2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private DateTime selectedDate;
 
-        public CalendarAddEvent()
+        public CalendarAddEvent(DateTime date)
         {
             InitializeComponent();
+            selectedDate = date;
+            textBox1.Text = selectedDate.ToShortDateString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string eventDateStr = textBox1.Text;
             string eventDescription = textBox2.Text;
 
-            if (string.IsNullOrEmpty(eventDateStr) || string.IsNullOrEmpty(eventDescription))
+            if (string.IsNullOrEmpty(eventDescription))
             {
                 MessageBox.Show("Please fill in all fields.");
-                return;
-            }
-
-            DateTime eventDate;
-            if (!DateTime.TryParse(eventDateStr, out eventDate))
-            {
-                MessageBox.Show("Please enter a valid date.");
                 return;
             }
 
@@ -41,7 +36,7 @@ namespace Classroom_Management_System
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@EventDate", eventDate);
+                        command.Parameters.AddWithValue("@EventDate", selectedDate);
                         command.Parameters.AddWithValue("@EventDescription", eventDescription);
 
                         int rowsAffected = command.ExecuteNonQuery();

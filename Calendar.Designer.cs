@@ -2,15 +2,9 @@
 {
     partial class Calendar
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private CalendarControl calendarControl1;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,39 +14,29 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            calendarControl1 = new CalendarControl();
-            SuspendLayout();
+            this.calendarControl1 = new Classroom_Management_System.CalendarControl();
+            this.SuspendLayout();
             // 
             // calendarControl1
             // 
-            calendarControl1.Location = new Point(3, 12);
-            calendarControl1.Name = "calendarControl1";
-            calendarControl1.Size = new Size(1009, 460);
-            calendarControl1.TabIndex = 0;
-            calendarControl1.Load += calendarControl1_Load;
+            this.calendarControl1.Location = new System.Drawing.Point(3, 12);
+            this.calendarControl1.Name = "calendarControl1";
+            this.calendarControl1.Size = new System.Drawing.Size(1009, 460);
+            this.calendarControl1.TabIndex = 0;
+            this.calendarControl1.Load += new System.EventHandler(this.calendarControl1_Load);
             // 
             // Calendar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1015, 524);
-            Controls.Add(calendarControl1);
-            Name = "Calendar";
-            Text = "Form2";
-            Load += Form2_Load;
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1015, 524);
+            this.Controls.Add(this.calendarControl1);
+            this.Name = "Calendar";
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.ResumeLayout(false);
         }
-
-        #endregion
-
-        private CalendarControl calendarControl1;
     }
 }

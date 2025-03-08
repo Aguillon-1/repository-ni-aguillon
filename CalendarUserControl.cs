@@ -13,8 +13,9 @@ namespace Classroom_Management_System
 {
     public partial class CalendarControl : UserControl
     {
-
         int month, year;
+        public event EventHandler<DateTime> DateClicked;
+
         public CalendarControl()
         {
             InitializeComponent();
@@ -52,8 +53,15 @@ namespace Classroom_Management_System
             {
                 UserControl3 ucdays = new UserControl3();
                 ucdays.days(i);
+                int day = i; // Ensure the correct day value is captured
+                ucdays.Click += (s, e) => OnDayClick(new DateTime(year, month, day)); // Raise event on day click
                 daycontainer.Controls.Add(ucdays);
             }
+        }
+
+        protected virtual void OnDayClick(DateTime date)
+        {
+            DateClicked?.Invoke(this, date);
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -75,6 +83,7 @@ namespace Classroom_Management_System
             daycontainer.Controls.Clear();
 
             month--;
+
             if (month < 1)
             {
                 month = 12;

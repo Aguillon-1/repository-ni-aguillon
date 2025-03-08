@@ -13,13 +13,9 @@ namespace Classroom_Management_System
     public partial class MainForm : Form
     {
 
-        private List<Notification> notifications;
-        private int unseenCount;
-        private NotifyIcon notifyIcon;
-
         public MainForm()
         {
-            InitializeComponent();
+          
             classButton.BackColor = Color.FromArgb(50, 210, 210, 210);
             classHeadPanel.Hide();
             notifications = new List<Notification>();
@@ -27,8 +23,28 @@ namespace Classroom_Management_System
             listBox2.Hide();
             InitializeNotifyIcon();
             section.BringToFront();
-
         }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime selectedDate = e.Start;
+            CalendarAddEvent addEventForm = new CalendarAddEvent(selectedDate);
+            addEventForm.ShowDialog();
+        }
+
+
+
+
+
+
+
+        private List<Notification> notifications;
+        private int unseenCount;
+        private NotifyIcon notifyIcon;
+
+       
+
+
 
 
         bool notiflist = false;
